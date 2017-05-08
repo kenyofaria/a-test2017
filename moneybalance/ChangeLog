@@ -1,0 +1,25 @@
+Version 1.4 - 13 Jun 2016
+	* New about dialog (translatable, shows version number and build date)
+	* Dutch localization
+
+Version 1.3.1 - 16 May 2016
+	* Fix crash when displaying summary activity
+
+Version 1.3 - 04 May 2016
+	* Multiple currencies per calculation
+	* Support more than 10 people per calculation
+	* Spanish localization
+	* Use Gradle wrapper for reproducible builds
+	* Updated icons for high-resolution displays
+
+Version 1.2 - 23 Sep 2013
+	* CSV export
+	* Gradle build script
+
+Version 1.1 - 18 Sep 2013
+	* Backward compatibility down to API level 7 (Android 2.1)
+	* French localization
+	* Fix handling of orientation changes in certain views.
+
+Version 1.0 - 10 Mar 2013
+	* Initial release

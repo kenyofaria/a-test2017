@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.stanfy.spoon:spoon-gradle-plugin:1.0.2'
+    }
+}
+
+apply plugin: 'spoon'
+
+android {
+
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "org.epstudios.epmobile"
+        minSdkVersion 7
+        targetSdkVersion 22
+        versionCode 43
+        versionName "2.10"
+
+        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:21.0.0'
+    androidTestCompile files('libs/espresso-1.1-bundled.jar')
+    //androidTestCompile files('libs/testrunner-1.1.jar')
+    androidTestCompile 'com.squareup.spoon:spoon-client:1.1.9'
+}
+
+spoon {
+// for debug output
+debug = true
+
+// run specific test from command line
+if (project.hasProperty('spoonClassName')) {
+    className = project.spoonClassName
+}
+
+if (project.hasProperty('spoonOutputDir')) {
+    baseOutputDir = file(project.spoonOutputDir)
+}
+
+// To run a single test class
+//className = 'org.epstudios.epmobile.test.TestA1'
+
+// To run a single method in TestCase
+//methodName = 'testA1'
+
+// Devices to run test case on
+//devices = ['0123456789ABCDEF']
+}

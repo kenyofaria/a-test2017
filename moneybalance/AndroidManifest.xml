@@ -1,0 +1,34 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ivl.android.moneybalance"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:versionCode="6"
+    android:versionName="1.4" >
+    <uses-sdk tools:overrideLibrary="android.support.test.uiautomator.v18"/>
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:icon="@drawable/coins"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:allowBackup="true" >
+
+        <activity
+            android:name=".CalculationListActivity"
+            android:label="@string/app_name" >            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CalculationEditorActivity" />
+        <activity android:name=".ManageCurrenciesActivity" />
+        <activity android:name=".ExpenseListActivity" />
+        <activity android:name=".ExpenseEditorActivity" />
+        <activity android:name=".SummaryActivity" />
+        
+    </application>
+
+</manifest>
